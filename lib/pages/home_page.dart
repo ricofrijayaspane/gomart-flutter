@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gomart/customs/app_colors.dart';
+import 'package:gomart/widgets/category_widget.dart';
 import 'package:gomart/widgets/home_appbar.dart';
 
 class HomePage extends StatelessWidget {
@@ -34,7 +35,7 @@ class HomePage extends StatelessWidget {
                   child: Row(
                     children: [
                       Container(
-                        margin: EdgeInsets.only(left: 5),
+                        margin: EdgeInsets.symmetric(horizontal: 5),
                         height: 50,
                         width: 300,
                         child: TextField(
@@ -45,11 +46,24 @@ class HomePage extends StatelessWidget {
                       ),
                       Icon(
                         Icons.camera_alt,
-                        color: AppColors.primary, 
+                        color: AppColors.primary,
                       ),
                     ],
                   ),
                 ),
+                Container(
+                  alignment: Alignment.centerLeft,
+                  margin: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+                  child: Text(
+                    'Categories',
+                    style: TextStyle(
+                      color: AppColors.primary,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 25,
+                    ),
+                  ),
+                ),
+                CategoryWidget(),
               ],
             ),
           ),
