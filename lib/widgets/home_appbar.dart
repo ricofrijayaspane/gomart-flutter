@@ -29,24 +29,24 @@ class HomeAppbar extends StatelessWidget {
             ),
           ),
           Spacer(),
-          badges.Badge(
-            badgeContent: Text(
-              '3',
-              style: TextStyle(color: Colors.white),
-            ),
-            badgeStyle: badges.BadgeStyle(
-              badgeColor: Colors.red,
-              padding: EdgeInsets.all(7),
-            ),
-            child: InkWell(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => CartPage(),
-                  ),
-                );
-              },
+          InkWell(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => CartPage(),
+                ),
+              );
+            },
+            child: badges.Badge(
+              badgeContent: Text(
+                '3',
+                style: TextStyle(color: Colors.white),
+              ),
+              badgeStyle: badges.BadgeStyle(
+                badgeColor: Colors.red,
+                padding: EdgeInsets.all(7),
+              ),
               child: Icon(
                 CupertinoIcons.cart_fill,
                 size: 32,
