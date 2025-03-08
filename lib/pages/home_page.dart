@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gomart/customs/app_colors.dart';
 import 'package:gomart/widgets/category_widget.dart';
 import 'package:gomart/widgets/home_appbar.dart';
+import 'package:gomart/widgets/product_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -9,65 +10,85 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
-        children: [
-          HomeAppbar(),
-          Container(
-            height: 500,
-            padding: EdgeInsets.only(top: 15),
-            decoration: BoxDecoration(
-              color: AppColors.background,
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(35),
-                topRight: Radius.circular(35),
-              ),
-            ),
-            child: Column(
-              children: [
-                Container(
-                  margin: EdgeInsets.symmetric(horizontal: 15),
-                  padding: EdgeInsets.symmetric(horizontal: 15),
-                  height: 50,
+      body: SafeArea(
+        child: Column(
+          children: [
+            HomeAppbar(),
+            Expanded(
+              child: SingleChildScrollView(
+                child: Container(
+                  padding: EdgeInsets.only(top: 15),
                   decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(30),
+                    color: AppColors.background,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(35),
+                      topRight: Radius.circular(35),
+                    ),
                   ),
-                  child: Row(
+                  child: Column(
                     children: [
                       Container(
-                        margin: EdgeInsets.symmetric(horizontal: 5),
+                        margin: EdgeInsets.symmetric(horizontal: 15),
+                        padding: EdgeInsets.symmetric(horizontal: 15),
                         height: 50,
-                        width: 300,
-                        child: TextField(
-                          decoration: InputDecoration(
-                              hintText: 'Search here...',
-                              border: InputBorder.none),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                        child: Row(
+                          children: [
+                            Container(
+                              margin: EdgeInsets.symmetric(horizontal: 5),
+                              height: 50,
+                              width: 290,
+                              child: TextField(
+                                decoration: InputDecoration(
+                                    hintText: 'Search here...',
+                                    border: InputBorder.none),
+                              ),
+                            ),
+                            Icon(
+                              Icons.camera_alt,
+                              color: AppColors.primary,
+                            ),
+                          ],
                         ),
                       ),
-                      Icon(
-                        Icons.camera_alt,
-                        color: AppColors.primary,
+                      Container(
+                        alignment: Alignment.centerLeft,
+                        margin:
+                            EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+                        child: Text(
+                          'Categories',
+                          style: TextStyle(
+                            color: AppColors.primary,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 25,
+                          ),
+                        ),
                       ),
+                      CategoryWidget(),
+                      Container(
+                        alignment: Alignment.centerLeft,
+                        margin:
+                            EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+                        child: Text(
+                          'Best Selling',
+                          style: TextStyle(
+                            color: AppColors.primary,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 25,
+                          ),
+                        ),
+                      ),
+                      ProductWidget(), // Pastikan `ProductWidget` menggunakan shrinkWrap:true
                     ],
                   ),
                 ),
-                Container(
-                  alignment: Alignment.centerLeft,
-                  margin: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
-                  child: Text(
-                    'Categories',
-                    style: TextStyle(
-                      color: AppColors.primary,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 25,
-                    ),
-                  ),
-                ),
-                CategoryWidget(),
-              ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
