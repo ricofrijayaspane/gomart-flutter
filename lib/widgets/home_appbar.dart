@@ -1,6 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gomart/customs/app_colors.dart';
 import 'package:badges/badges.dart' as badges;
+import 'package:gomart/pages/cart_page.dart';
 
 class HomeAppbar extends StatelessWidget {
   const HomeAppbar({super.key});
@@ -37,9 +39,16 @@ class HomeAppbar extends StatelessWidget {
               padding: EdgeInsets.all(7),
             ),
             child: InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CartPage(),
+                  ),
+                );
+              },
               child: Icon(
-                Icons.shopping_bag_outlined,
+                CupertinoIcons.cart_fill,
                 size: 32,
                 color: AppColors.primary,
               ),

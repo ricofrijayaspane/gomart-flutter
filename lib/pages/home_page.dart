@@ -1,3 +1,5 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gomart/customs/app_colors.dart';
 import 'package:gomart/widgets/category_widget.dart';
@@ -89,6 +91,29 @@ class HomePage extends StatelessWidget {
             ),
           ],
         ),
+      ),
+      bottomNavigationBar: CurvedNavigationBar(
+        backgroundColor: Colors.transparent,
+        onTap: (index) {},
+        color: AppColors.primary,
+        height: 70,
+        items: [
+          Icon(
+            Icons.home,
+            size: 30,
+            color: Colors.white,
+          ),
+          Icon(
+            CupertinoIcons.cart_fill,
+            size: 30,
+            color: Colors.white,
+          ),
+          Icon(
+            Icons.person_2,
+            size: 30,
+            color: Colors.white,
+          )
+        ],
       ),
     );
   }
