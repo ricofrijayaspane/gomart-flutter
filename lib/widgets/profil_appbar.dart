@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 import 'package:gomart/customs/app_colors.dart';
 import 'package:gomart/controllers/home_controller.dart';
 
-class CartAppbar extends StatelessWidget {
-  const CartAppbar({super.key});
+class ProfilAppbar extends StatelessWidget {
+  const ProfilAppbar({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,10 +17,11 @@ class CartAppbar extends StatelessWidget {
         children: [
           InkWell(
             onTap: () {
-              if (controller.selectedIndex.value == 1) {
-                controller.changePage(0);
+              // Jika halaman Profil diakses dari BottomNavbar, kembali ke HomePage
+              if (controller.selectedIndex.value == 2) {
+                controller.changePage(0); // Kembali ke home
               } else {
-                Get.back();
+                Get.back(); // Jika masuk lewat AppBar, kembali ke halaman sebelumnya
               }
             },
             child: Icon(
@@ -32,7 +33,7 @@ class CartAppbar extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: 20),
             child: Text(
-              'Cart',
+              'Profile',
               style: TextStyle(
                   fontSize: 23,
                   fontWeight: FontWeight.bold,

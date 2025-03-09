@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:gomart/pages/detail_product.dart';
 import 'package:gomart/pages/home_page.dart';
 import 'package:gomart/pages/splash_screen.dart';
+import 'package:gomart/routes/app_routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: SplashScreen(),
+      getPages: AppRoutes.routes,
     );
   }
 }

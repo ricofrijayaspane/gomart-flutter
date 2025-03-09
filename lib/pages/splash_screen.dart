@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:gomart/customs/app_colors.dart';
-import 'package:google_fonts/google_fonts.dart';
+// import 'package:google_fonts/google_fonts.dart';
 import 'package:gomart/pages/home_page.dart'; // Pastikan mengimpor halaman tujuan
 
 class SplashScreen extends StatefulWidget {
@@ -38,10 +39,7 @@ class _SplashScreenState extends State<SplashScreen>
 
     // Menunggu 5 detik sebelum pindah ke HomePage
     Future.delayed(Duration(seconds: 5), () {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => HomePage()),
-      );
+      Get.toNamed('/home-page');
     });
   }
 
@@ -100,7 +98,7 @@ class _SplashScreenState extends State<SplashScreen>
                 },
                 child: Text(
                   'GOMART',
-                  style: GoogleFonts.quicksand(
+                  style: TextStyle(
                     fontSize: 40,
                     fontWeight: FontWeight.w900,
                     color: AppColors.primary,

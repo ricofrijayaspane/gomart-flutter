@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:gomart/customs/app_colors.dart';
 import 'package:badges/badges.dart' as badges;
 import 'package:gomart/pages/cart_page.dart';
@@ -31,12 +32,7 @@ class HomeAppbar extends StatelessWidget {
           Spacer(),
           InkWell(
             onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => CartPage(),
-                ),
-              );
+              Get.toNamed('cart-page');
             },
             child: badges.Badge(
               badgeContent: Text(

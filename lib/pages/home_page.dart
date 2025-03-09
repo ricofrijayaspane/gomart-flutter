@@ -4,29 +4,30 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gomart/customs/app_colors.dart';
 import 'package:gomart/controllers/home_controller.dart';
+import 'package:gomart/pages/cart_page.dart';
 import 'package:gomart/pages/profil_page.dart';
 import 'package:gomart/widgets/category_widget.dart';
 import 'package:gomart/widgets/home_appbar.dart';
 import 'package:gomart/widgets/product_widget.dart';
-import 'package:gomart/pages/cart_page.dart';
 
 class HomePage extends StatelessWidget {
   final HomeController controller = Get.put(HomeController());
+
+  final List<Widget> pages = [
+    _HomeContent(), // Halaman Home tetap dalam file ini
+    CartPage(),
+    ProfilPage(),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Obx(() => Scaffold(
           body: IndexedStack(
             index: controller.selectedIndex.value,
-            children: [
-              _buildHomeContent(),
-              CartPage(),
-              ProfilPage(),
-            ],
+            children: pages,
           ),
           bottomNavigationBar: CurvedNavigationBar(
             backgroundColor: Colors.transparent,
-            onTap: controller.changePage,
             color: AppColors.primary,
             height: 70,
             items: const [
@@ -34,11 +35,19 @@ class HomePage extends StatelessWidget {
               Icon(CupertinoIcons.cart_fill, size: 30, color: Colors.white),
               Icon(Icons.person_2, size: 30, color: Colors.white),
             ],
+            index: controller.selectedIndex.value,
+            onTap: (index) {
+              controller.changePage(index);
+            },
           ),
         ));
   }
+}
 
-  Widget _buildHomeContent() {
+// Dipisahkan agar lebih rapi
+class _HomeContent extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
     return SafeArea(
       child: Column(
         children: [
@@ -74,7 +83,7 @@ class HomePage extends StatelessWidget {
                               ),
                             ),
                           ),
-                          Icon(Icons.camera_alt, color: Colors.blue),
+                          Icon(Icons.camera_alt, color: AppColors.primary),
                         ],
                       ),
                     ),
@@ -116,5 +125,3 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-
-class ProfilePage {}
