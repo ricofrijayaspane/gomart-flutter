@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gomart/controllers/home_controller.dart';
-import 'package:gomart/pages/detail_product.dart';
-import 'package:gomart/pages/home_page.dart';
-import 'package:gomart/pages/splash_screen.dart';
 import 'package:gomart/routes/app_routes.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   Get.put(HomeController()); // Pastikan controller tersedia sebelum digunakan
   runApp(const MyApp());
 }

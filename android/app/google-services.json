@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "601124488677",
+    "project_id": "gomart-43a88",
+    "storage_bucket": "gomart-43a88.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:601124488677:android:3ee6c238fe0a5bd9719b0c",
+        "android_client_info": {
+          "package_name": "com.example.gomart"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5rx9ZmT8pRqGoQRZCN4w6qu7s92pxUnE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
