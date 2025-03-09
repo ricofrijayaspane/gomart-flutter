@@ -48,7 +48,7 @@ class HomePage extends StatelessWidget {
               child: Container(
                 padding: EdgeInsets.only(top: 15),
                 decoration: BoxDecoration(
-                  color: Colors.grey[200],
+                  color: AppColors.background,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(35),
                     topRight: Radius.circular(35),
@@ -85,7 +85,7 @@ class HomePage extends StatelessWidget {
                       child: Text(
                         'Categories',
                         style: TextStyle(
-                          color: Colors.blue,
+                          color: AppColors.primary,
                           fontWeight: FontWeight.bold,
                           fontSize: 25,
                         ),
@@ -99,7 +99,7 @@ class HomePage extends StatelessWidget {
                       child: Text(
                         'Best Selling',
                         style: TextStyle(
-                          color: Colors.blue,
+                          color: AppColors.primary,
                           fontWeight: FontWeight.bold,
                           fontSize: 25,
                         ),
