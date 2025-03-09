@@ -1,7 +1,10 @@
 import 'package:get/get.dart';
 import 'package:gomart/pages/cart_page.dart';
+import 'package:gomart/pages/get_started_page.dart';
 import 'package:gomart/pages/home_page.dart';
+import 'package:gomart/pages/login_page.dart';
 import 'package:gomart/pages/profil_page.dart';
+import 'package:gomart/pages/register_page.dart';
 import 'package:gomart/pages/splash_screen.dart';
 
 class AppRoutes {
@@ -10,5 +13,8 @@ class AppRoutes {
     GetPage(name: '/home-page', page: () => HomePage()),
     GetPage(name: '/cart-page', page: () => CartPage()),
     GetPage(name: '/profil-page', page: () => ProfilPage()),
+    GetPage(name: '/get-started-page', page: () => GetStartedPage()),
+    GetPage(name: '/login-page', page: () => LoginPage()),
+    GetPage(name: '/register-page', page: () => RegisterPage()),
   ];
 }

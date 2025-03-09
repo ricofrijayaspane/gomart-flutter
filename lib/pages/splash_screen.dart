@@ -39,7 +39,7 @@ class _SplashScreenState extends State<SplashScreen>
 
     // Menunggu 5 detik sebelum pindah ke HomePage
     Future.delayed(Duration(seconds: 5), () {
-      Get.toNamed('/home-page');
+      Get.toNamed('/get-started-page');
     });
   }
 
@@ -56,7 +56,7 @@ class _SplashScreenState extends State<SplashScreen>
         width: double.infinity,
         height: double.infinity,
         decoration: BoxDecoration(
-          color: AppColors.background,
+          color: AppColors.primary,
         ),
         child: Center(
           child: Column(
@@ -74,11 +74,11 @@ class _SplashScreenState extends State<SplashScreen>
                   );
                 },
                 child: Container(
-                  width: 120,
-                  height: 120,
+                  width: 400,
+                  height: 400,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage('assets/images/tes.png'),
+                      image: AssetImage('assets/images/logo.png'),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -96,18 +96,10 @@ class _SplashScreenState extends State<SplashScreen>
                     ),
                   );
                 },
-                child: Text(
-                  'GOMART',
-                  style: TextStyle(
-                    fontSize: 40,
-                    fontWeight: FontWeight.w900,
-                    color: AppColors.primary,
-                  ),
-                ),
               ),
               SizedBox(height: 20),
               CircularProgressIndicator(
-                valueColor: AlwaysStoppedAnimation(AppColors.primary),
+                valueColor: AlwaysStoppedAnimation(AppColors.background),
               ),
             ],
           ),
