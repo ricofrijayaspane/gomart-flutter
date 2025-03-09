@@ -27,7 +27,7 @@ class CartProductWidget extends StatelessWidget {
             height: 70,
             width: 70,
             margin: EdgeInsets.only(right: 15),
-            child: Image.asset('assets/images/categories-1.png'),
+            child: Image.asset('assets/images/mens-clothing.jpg'),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 10),
@@ -36,14 +36,14 @@ class CartProductWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'Product Title',
+                  'Mens Cotton',
                   style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                       color: AppColors.primary),
                 ),
                 Text(
-                  '\$55',
+                  '\$55.99',
                   style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,

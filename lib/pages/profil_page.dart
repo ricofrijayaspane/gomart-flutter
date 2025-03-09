@@ -55,7 +55,7 @@ class ProfilPage extends StatelessWidget {
               ),
               Spacer(),
               SizedBox(
-                width: double.infinity,
+                width: 250,
                 height: 50,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(

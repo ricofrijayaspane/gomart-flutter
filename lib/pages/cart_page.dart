@@ -46,7 +46,7 @@ class CartPage extends StatelessWidget {
                                   color: AppColors.primary),
                             ),
                             Text(
-                              '\$230',
+                              '\$55.99',
                               style: TextStyle(
                                   fontSize: 22,
                                   fontWeight: FontWeight.bold,
