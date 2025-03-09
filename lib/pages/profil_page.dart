@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gomart/widgets/profil_appbar.dart';
+import 'package:get/get.dart';
+import 'package:gomart/customs/app_colors.dart';
 
 class ProfilPage extends StatelessWidget {
   const ProfilPage({super.key});
@@ -7,11 +8,74 @@ class ProfilPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.background,
       body: SafeArea(
-        child: ListView(
-          children: [
-            ProfilAppbar(),
-          ],
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Center(
+                child: CircleAvatar(
+                  radius: 60,
+                  backgroundImage: AssetImage('assets/images/electronics.jpg'),
+                ),
+              ),
+              SizedBox(height: 20),
+              Text(
+                'John Doe',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: AppColors.primary,
+                ),
+              ),
+              SizedBox(height: 10),
+              Text(
+                'johndoe@example.com',
+                style: TextStyle(
+                  fontSize: 16,
+                  color: AppColors.primary,
+                ),
+              ),
+              SizedBox(height: 20),
+              ListTile(
+                leading: Icon(Icons.phone, color: AppColors.primary),
+                title: Text(
+                  '+62 812-3456-7890',
+                  style: TextStyle(color: AppColors.primary),
+                ),
+              ),
+              ListTile(
+                leading: Icon(Icons.location_on, color: AppColors.primary),
+                title: Text(
+                  'Jl. Merdeka No. 123, Jakarta',
+                  style: TextStyle(color: AppColors.primary),
+                ),
+              ),
+              Spacer(),
+              SizedBox(
+                width: double.infinity,
+                height: 50,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: AppColors.primary,
+                    foregroundColor: AppColors.background,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                  ),
+                  onPressed: () {
+                    Get.offAllNamed('/login-page');
+                  },
+                  child: Text(
+                    'Logout',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

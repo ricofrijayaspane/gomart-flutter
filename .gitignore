@@ -18,10 +18,8 @@ migrate_working_dir/
 *.iws
 .idea/
 
-# The .vscode folder contains launch configuration and tasks you configure in
-# VS Code which you may wish to be included in version control, so this line
-# is commented out by default.
-#.vscode/
+# VS Code related
+.vscode/
 
 # Flutter/Dart/Pub related
 **/doc/api/
@@ -39,7 +37,51 @@ app.*.symbols
 # Obfuscation related
 app.*.map.json
 
-# Android Studio will place build artifacts here
-/android/app/debug
-/android/app/profile
-/android/app/release
+# Android related
+/android/app/debug/
+/android/app/profile/
+/android/app/release/
+/android/app/cxx/
+/android/app/.cxx/
+/android/gradle/
+/android/.gradle/
+/android/local.properties
+/android/.idea/
+/android/*.iml
+/android/captures/
+/android/.externalNativeBuild/
+/android/.settings/
+
+# iOS related
+/ios/Pods/
+/ios/.symlinks/
+/ios/.swiftpm/
+/ios/Flutter/Flutter.podspec
+/ios/Flutter/App.framework
+/ios/Flutter/Flutter.framework
+/ios/Flutter/Generated.xcconfig
+/ios/.dart_tool/
+/ios/.build/
+
+# Xcode related
+*.xcworkspace/
+*.xcuserstate/
+*.xcuserdata/
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+
+# Fastlane related
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+fastlane/metadata/android
+
+# Other build artifacts
+.cmake/
+CMakeLists.txt.user
+/cmake-build-debug/
+/cmake-build-release/
+.idea/workspace.xml

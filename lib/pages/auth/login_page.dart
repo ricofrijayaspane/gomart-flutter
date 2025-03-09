@@ -1,9 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:gomart/customs/app_colors.dart';
+import 'package:gomart/pages/auth/register_page.dart';
+import 'package:gomart/pages/home_page.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
+
+  @override
+  _LoginPageState createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+
+  void loginUser() async {
+    try {
+      await _auth.signInWithEmailAndPassword(
+        email: emailController.text.trim(),
+        password: passwordController.text.trim(),
+      );
+      Get.offAll(
+          () => HomePage()); // Navigasi ke HomePage setelah login berhasil
+    } catch (e) {
+      Get.snackbar("Login Failed", e.toString(),
+          backgroundColor: Colors.red, colorText: Colors.white);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,19 +52,9 @@ class LoginPage extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(height: 5),
-                Text(
-                  'Login to continue',
-                  style: TextStyle(
-                    color: AppColors.background,
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
                 SizedBox(height: 40),
-
-                // Email Field
                 TextField(
+                  controller: emailController,
                   decoration: InputDecoration(
                     labelText: 'Email',
                     labelStyle: TextStyle(color: AppColors.background),
@@ -53,11 +69,9 @@ class LoginPage extends StatelessWidget {
                   style: TextStyle(color: AppColors.background),
                   keyboardType: TextInputType.emailAddress,
                 ),
-
                 SizedBox(height: 20),
-
-                // Password Field
                 TextField(
+                  controller: passwordController,
                   decoration: InputDecoration(
                     labelText: 'Password',
                     labelStyle: TextStyle(color: AppColors.background),
@@ -74,10 +88,7 @@ class LoginPage extends StatelessWidget {
                   style: TextStyle(color: AppColors.background),
                   obscureText: true,
                 ),
-
                 SizedBox(height: 40),
-
-                // Login Button
                 SizedBox(
                   width: double.infinity,
                   height: 50,
@@ -89,9 +100,7 @@ class LoginPage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(15),
                       ),
                     ),
-                    onPressed: () {
-                      // Aksi login di sini
-                    },
+                    onPressed: loginUser,
                     child: Text(
                       'Login',
                       style:
@@ -99,10 +108,7 @@ class LoginPage extends StatelessWidget {
                     ),
                   ),
                 ),
-
                 SizedBox(height: 20),
-
-                // Register Text
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -112,8 +118,7 @@ class LoginPage extends StatelessWidget {
                     ),
                     GestureDetector(
                       onTap: () {
-                        Get.toNamed(
-                            '/register-page'); // Pindah ke halaman register
+                        Get.to(() => RegisterPage());
                       },
                       child: Text(
                         "Register",
