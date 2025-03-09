@@ -18,12 +18,12 @@ class ProfilPage extends StatelessWidget {
               Center(
                 child: CircleAvatar(
                   radius: 60,
-                  backgroundImage: AssetImage('assets/images/electronics.jpg'),
+                  backgroundImage: AssetImage('assets/images/foto.jpg'),
                 ),
               ),
               SizedBox(height: 20),
               Text(
-                'John Doe',
+                'Rico Frijaya S. Pane',
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
@@ -32,7 +32,7 @@ class ProfilPage extends StatelessWidget {
               ),
               SizedBox(height: 10),
               Text(
-                'johndoe@example.com',
+                'ricopane1009@gmail.com',
                 style: TextStyle(
                   fontSize: 16,
                   color: AppColors.primary,
@@ -49,7 +49,7 @@ class ProfilPage extends StatelessWidget {
               ListTile(
                 leading: Icon(Icons.location_on, color: AppColors.primary),
                 title: Text(
-                  'Jl. Merdeka No. 123, Jakarta',
+                  'Jl. Palagan, Sleman, Yogyakarta',
                   style: TextStyle(color: AppColors.primary),
                 ),
               ),
@@ -66,7 +66,7 @@ class ProfilPage extends StatelessWidget {
                     ),
                   ),
                   onPressed: () {
-                    Get.offAllNamed('/login-page');
+                    Get.offAllNamed('/get-started-page');
                   },
                   child: Text(
                     'Logout',
