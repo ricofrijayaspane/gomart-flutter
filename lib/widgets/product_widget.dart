@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gomart/customs/app_colors.dart';
 import 'package:gomart/controllers/product_controller.dart';
+import 'package:gomart/pages/detail_product.dart';
 
 class ProductWidget extends StatelessWidget {
   final ProductController controller = Get.put(ProductController());
@@ -44,7 +45,10 @@ class ProductWidget extends StatelessWidget {
                   ],
                 ),
                 InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Get.to(() => DetailProduct(
+                        product: product)); // Navigasi ke halaman detail
+                  },
                   child: Container(
                     margin: EdgeInsets.all(10),
                     child: Image.network(
